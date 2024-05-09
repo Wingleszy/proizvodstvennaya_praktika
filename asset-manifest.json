@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.68384804.css",
-    "main.js": "/static/js/main.81655a1d.js",
+    "main.js": "/static/js/main.db91aa93.js",
     "static/media/avatar.png": "/static/media/avatar.79ac97fe8e1883250735.png",
     "static/media/wave-logo.png": "/static/media/wave-logo.a08bf532e8015ed4ea90.png",
     "static/media/photo_2023-05-12_15-07-08_large (1).jpg": "/static/media/photo_2023-05-12_15-07-08_large (1).91e1a97ebf296f3c5a03.jpg",
     "static/media/spring-meadow-green-fields-landscape-with-mountain-blue-sky-and-clouds-background-cartoon-illustration-for-spring-vector.jpg": "/static/media/spring-meadow-green-fields-landscape-with-mountain-blue-sky-and-clouds-background-cartoon-illustration-for-spring-vector.a29cc5a09133ef5d096c.jpg",
     "index.html": "/index.html",
     "main.68384804.css.map": "/static/css/main.68384804.css.map",
-    "main.81655a1d.js.map": "/static/js/main.81655a1d.js.map"
+    "main.db91aa93.js.map": "/static/js/main.db91aa93.js.map"
   },
   "entrypoints": [
     "static/css/main.68384804.css",
-    "static/js/main.81655a1d.js"
+    "static/js/main.db91aa93.js"
   ]
 }
