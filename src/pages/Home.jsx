@@ -4,12 +4,20 @@
     import { Footer } from "../components/Footer";
     import { Label } from "../components/Label";
     import { DriversList } from "../components/DriversList";
+    import { useSearchParams } from "react-router-dom";
 
     export const Home = () => {
     const [isExpanded, setExpanded] = useState(false);
     const [drivers, setDrivers] = useState([]);
+    const [pagesCount, setPagesCount] = useState();
+    const [searchParams, setSearchParams] = useSearchParams()
+    
+    const [currentPage, setCurrentPage] = useState(parseInt(searchParams.get('page')) || 1)
+
+
+
     useEffect(() => {
-        fetch(process.env.REACT_APP_API_LINK + "dictionary/drivers?page=1", {
+        fetch(process.env.REACT_APP_API_LINK + "dictionary/drivers?page=" + currentPage, {
             
             headers: new Headers({
                 'Authorization': "Bearer " + localStorage.getItem("token"),
@@ -19,14 +27,11 @@
         })
         .then((response) => response.json())
         .then((data) => {
+            setPagesCount(Math.ceil(data["hydra:totalItems"]/30))
             setDrivers(data["hydra:member"]);
         });
-        // .then(data => setDrivers(data))
-    }, []);
+    }, [currentPage]);
 
-    useEffect(() => {
-        console.log(drivers);
-    }, [drivers])
 
     return (
         <div className="container">
@@ -34,7 +39,7 @@
         <main className="main">
             <Header setExpanded={setExpanded} />
             <Label label={"Список водителей"} />
-            <DriversList drivers={drivers}/>
+            <DriversList setDrivers={setDrivers} drivers={drivers} pagesCount={pagesCount} currentPage={currentPage} setCurrentPage={setCurrentPage} setSearchParams={setSearchParams} searchParams={searchParams}/>
             <Footer />
         </main>
         </div>

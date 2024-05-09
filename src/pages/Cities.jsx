@@ -5,40 +5,42 @@ import { Footer } from "../components/Footer";
 import { Label } from "../components/Label";
 import { DirectionsList } from "../components/DirectionsList";
 import { useSearchParams } from "react-router-dom";
+import { PassengersList } from "../components/PassengersList";
+import { CitiesList } from "../components/CitiesList";
 
-export const Directions = () => {
+export const Cities = () => {
     const [isExpanded, setExpanded] = useState(false);
-    const [directions, setDirections] = useState([]);
+    const [passengers, setPassengers] = useState([]);
     const [pagesCount, setPagesCount] = useState();
     const [searchParams, setSearchParams] = useSearchParams()
     
-    const [currentPage, setCurrentPage] = useState(searchParams.get('page') || 1)
-    
+    const [currentPage, setCurrentPage] = useState(parseInt(searchParams.get('page')) || 1)
+
+
+
     useEffect(() => {
-        fetch(process.env.REACT_APP_API_LINK + "dictionary/directions?page=" + currentPage, {
-            
+        fetch(process.env.REACT_APP_CITIES_LINK + "cities?page=" + currentPage, {
             headers: new Headers({
                 'Authorization': "Bearer " + localStorage.getItem("token"),
                 'Content-Type': 'application/json; charset=utf-8',
-                'Accept':'application/ld+json'
+                'accept':'application/json'
             }),
         })
         .then((response) => response.json())
         .then((data) => {
             setPagesCount(Math.ceil(data["hydra:totalItems"]/30))
-            setDirections(data["hydra:member"]);
+            setPassengers(data["hydra:member"]);
         });
-        // .then(data => setDrivers(data))
     }, [currentPage]);
 
 
     return (
         <div className="container">
-        <Sidebar isExpanded={isExpanded} active="directions" />
+        <Sidebar isExpanded={isExpanded} active="cities" />
         <main className="main">
             <Header setExpanded={setExpanded} />
-            <Label label={"Список направлений"} />
-            <DirectionsList directions={directions} pagesCount={pagesCount} currentPage={currentPage} setCurrentPage={setCurrentPage} setSearchParams={setSearchParams}/>
+            <Label label={"Список городов"} />
+            <CitiesList setPassengers={setPassengers} passengers={passengers} pagesCount={pagesCount} currentPage={currentPage} setCurrentPage={setCurrentPage} setSearchParams={setSearchParams} searchParams={searchParams}/>
             <Footer />
         </main>
         </div>

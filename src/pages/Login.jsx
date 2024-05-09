@@ -31,9 +31,9 @@ export const Login = (props) => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="login_container">
       <img src={busImg} alt="" className="bus-logo" />
-      <div className="content">
+      <div className="login_content">
         <h3>
           Добро пожаловать в систему управления продажами <span className="bold">БРОНЕВ</span>
         </h3>

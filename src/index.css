@@ -31,12 +31,17 @@ body {
   width: 40%;
 }
 
+.login_container {
+  display: flex;
+  flex-direction: row;
+}
+
 .container {
   display: flex;
   flex-direction: row;
 }
 
-.content {
+.login_content {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -45,20 +50,20 @@ body {
   padding: 5%;
 }
 
-.content hr {
+.login_content hr {
   width: 100%;
   margin: 5px 0;
   opacity: 0.4;
 }
 
-.content h3 {
+.login_content h3 {
   font-size: 32px;
   max-width: 85%;
   font-weight: 500;
   padding: 10px 0;
 }
 
-.content h4 {
+.login_content h4 {
   font-size: 24px;
   font-weight: 400;
   padding: 10px 0;
@@ -74,16 +79,12 @@ body {
     display: none;
   }
 
-  html,
-  body {
-    height: 100%;
-  }
 
-  .container {
+  .login_container {
     height: 100vh;
   }
 
-  .content {
+  .login_content {
     width: 100%;
   }
 }
@@ -119,6 +120,7 @@ body {
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+  z-index: 4;
 }
 
 .header_avatar {
@@ -147,6 +149,7 @@ body {
   .main {
     width: 100%;
     min-height: 100vh;
+    overflow-y: scroll;
     display: flex;
     background-color: lightblue;
     flex-direction: column;
@@ -309,10 +312,13 @@ body {
       align-self: center;
       margin: 10px 0;
       display: flex;
-      flex-direction: column  ;
+      flex-direction: column;
+      position: relative;
+      padding-bottom: 100px;
+      overflow-x: scroll;
     }
     
-    .drivers_row{
+    .drivers_row, .directions_row {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -323,6 +329,14 @@ body {
     .drivers_header {
       border-bottom: 2px solid lightblue;
       font-weight: bold;
+    }
+
+    
+    .directions_row div {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+      min-width: 33%;
     }
 
     .drivers_row div {
@@ -343,4 +357,124 @@ body {
     .green {
       background-color: rgb(3, 189, 3);
     }
-  /* /DRIVERSLIST */
+
+    .drivers_pagination {
+      display: flex;
+      flex-direction: row;
+      border: 1px solid rgb(179, 178, 178);
+      align-self: center;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .drivers_pagination div{
+      border: 1px solid rgb(179, 178, 178);
+      padding: 10px 10px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .active_page {
+      background-color: lightskyblue;
+      color: white;
+    }
+
+    .drivers_filter {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .drivers_filter input, .drivers_filter select {
+      border-radius: 5px;
+      border: 1px solid gray;
+      padding: 5px 5px;
+      font-size: 15px;
+      width: 20%;
+    }
+
+    .drivers_search {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      gap: 10px;
+    }
+
+    .search_reset {
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 10px;
+      font-size: 14px;
+      margin: 0 15px;
+      cursor: pointer;
+    }
+
+    .search_find {
+      background-color: rgb(0, 140, 255);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 10px;
+      font-size: 14px;
+      margin: 0 15px;
+      cursor: pointer;
+    }
+
+    .directions_filter input {
+      width: 45%;
+    }
+
+    .card {
+      /* display: flex; */
+      align-items: center;
+      flex-direction: column;
+      margin: 10px 0;
+      display: none;
+    }
+
+    .visible {
+      display: flex;
+    }
+
+    .drivers_row_container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card_header {
+      background-color: gray;
+      width: 80%;
+      text-align: center;
+      color: white;
+      padding: 10px 0;
+      margin-bottom: 15px;
+    }
+
+    .card_line {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      border-top: 1px solid rgb(179, 178, 178);
+      width: 80%;
+      padding: 10px 0;
+    }
+    
+    .card_name {
+      font-weight: bold;
+    }
+
+    .card_name {
+      text-align: right;
+      width: 15%;
+    }
+
+    .card_value {
+      text-align: center;
+      width: 15%;
+    }
+  /* /DRIVERSLIST && DIRECTIONSLIST*/

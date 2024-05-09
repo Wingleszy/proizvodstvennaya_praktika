@@ -5,10 +5,10 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import MopedIcon from '@mui/icons-material/Moped';
 import DirectionsIcon from '@mui/icons-material/Directions';
+import AirlineSeatReclineNormalIcon from '@mui/icons-material/AirlineSeatReclineNormal';
 import { Link } from "react-router-dom";
 
 export const Sidebar = ({ isExpanded, active }) => {
-
     const [isOpen, setOpen] = useState(false)
 
   return (
@@ -53,7 +53,7 @@ export const Sidebar = ({ isExpanded, active }) => {
                         fontSize: '26px',
                         marginRight: '5px'
                     }}/>
-                    <Link className="sidebar_hypertext" to={'/'}>Водители</Link>
+                    <Link className="sidebar_hypertext" to={'/drivers'}>Водители</Link>
                 </div>
                 <div className={`link_item ${active === 'directions' ? 'active' : null}`}>
                     <DirectionsIcon fontSize="inherit" sx={{
@@ -61,6 +61,21 @@ export const Sidebar = ({ isExpanded, active }) => {
                         marginRight: '5px'
                     }}/>
                     <Link className="sidebar_hypertext" to={'/directions'}>Направления</Link>
+                </div>
+                <div className={`link_item ${active === 'passengers' ? 'active' : null}`}>
+                    <AirlineSeatReclineNormalIcon fontSize="inherit" sx={{
+                        fontSize: '26px',
+                        marginRight: '5px'
+                    }}/>
+                    <Link className="sidebar_hypertext" to={'/passengers'}>Пассажиры</Link>
+                </div>
+                
+                <div className={`link_item ${active === 'cities' ? 'active' : null}`}>
+                    <DirectionsIcon fontSize="inherit" sx={{
+                        fontSize: '26px',
+                        marginRight: '5px'
+                    }}/>
+                    <Link className="sidebar_hypertext" to={'/cities'}>Города</Link>
                 </div>
             </div> : null}
         </>
