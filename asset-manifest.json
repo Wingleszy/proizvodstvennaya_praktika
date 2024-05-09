@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/proizvodstvennaya_praktika/static/css/main.1d0f4667.css",
-    "main.js": "/proizvodstvennaya_praktika/static/js/main.4d43d309.js",
+    "main.js": "/proizvodstvennaya_praktika/static/js/main.6bc695cc.js",
     "static/media/avatar.png": "/proizvodstvennaya_praktika/static/media/avatar.79ac97fe8e1883250735.png",
     "static/media/wave-logo.png": "/proizvodstvennaya_praktika/static/media/wave-logo.a08bf532e8015ed4ea90.png",
     "static/media/photo_2023-05-12_15-07-08_large (1).jpg": "/proizvodstvennaya_praktika/static/media/photo_2023-05-12_15-07-08_large (1).91e1a97ebf296f3c5a03.jpg",
     "static/media/spring-meadow-green-fields-landscape-with-mountain-blue-sky-and-clouds-background-cartoon-illustration-for-spring-vector.jpg": "/proizvodstvennaya_praktika/static/media/spring-meadow-green-fields-landscape-with-mountain-blue-sky-and-clouds-background-cartoon-illustration-for-spring-vector.a29cc5a09133ef5d096c.jpg",
     "index.html": "/proizvodstvennaya_praktika/index.html",
     "main.1d0f4667.css.map": "/proizvodstvennaya_praktika/static/css/main.1d0f4667.css.map",
-    "main.4d43d309.js.map": "/proizvodstvennaya_praktika/static/js/main.4d43d309.js.map"
+    "main.6bc695cc.js.map": "/proizvodstvennaya_praktika/static/js/main.6bc695cc.js.map"
   },
   "entrypoints": [
     "static/css/main.1d0f4667.css",
-    "static/js/main.4d43d309.js"
+    "static/js/main.6bc695cc.js"
   ]
 }
