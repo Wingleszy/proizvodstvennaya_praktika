@@ -10,6 +10,7 @@ function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
   return (
     <Routes>
+      {/* создаю приватные роуты и переадрессация на другой роут в случае авторизации */}
       <Route element={!token ? <Login setToken={setToken} /> : <Navigate to={'/drivers'} replace />} path="/login"/>
       <Route element={token ? <Home /> : <Navigate to={'/login'} replace/>} path="/drivers"/>
       <Route element={token ? <Directions /> : <Navigate to={'/login'} replace/>} path="/directions"/>
