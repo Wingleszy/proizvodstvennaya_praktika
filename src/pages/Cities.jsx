@@ -28,8 +28,7 @@ export const Cities = () => {
         })
         .then((response) => response.json())
         .then((data) => {
-            setPagesCount(Math.ceil(data["hydra:totalItems"]/30))
-            setPassengers(data["hydra:member"]);
+            console.log(data);
         });
     }, [currentPage]);
 
