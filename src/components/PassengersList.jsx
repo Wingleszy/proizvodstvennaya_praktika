@@ -169,36 +169,36 @@ export const PassengersList = (props) => {
             <div className='drivers_row drivers_header'>
                 <div>
                     Фамилия
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                    <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
                 </div>
 
                 <div>
                     Имя
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                    <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
                 </div>
                 <div>
                     Отчество
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                    <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
                 </div>
                 <div>
                     Телефон
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                    <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
                 </div>
                 <div>
                     E-mail
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                    <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
                 </div>
                 <div>
                     Пол
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                    <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
                 </div>
                 <div>
                     Серия и номер паспорта
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                    <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
                 </div>
                 <div>
                     Дата рождения
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                    <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
                 </div>
             </div>
             {filteredPassengers.map((passenger, index) => <PassengerRow key={index} passenger={passenger} />)}

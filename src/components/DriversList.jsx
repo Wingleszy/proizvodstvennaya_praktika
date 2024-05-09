@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SwitchLeftIcon from '@mui/icons-material/SwitchLeft';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -62,6 +62,11 @@ export const DriversList = (props) => {
         }));
     };
 
+
+    useEffect(() => {
+        setFilteredDrivers(drivers)
+    }, [drivers])
+
     const searchHandler = () => {
         const filteredData = drivers.filter((driver) => {
             if (firstName && !driver.firstname.toLowerCase().includes(firstName.toLowerCase())) {
@@ -105,37 +110,40 @@ export const DriversList = (props) => {
                 <button className='search_reset' onClick={resetSearchHandler}>Сбросить</button>
                 <button className='search_find' onClick={searchHandler}>Поиск</button>
             </div>
+            <div className='drivers_table_container'>
+
             <div className='drivers_row drivers_header'>
                 <div>
                     Фамилия
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                    <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
                 </div>
 
                 <div>
                     Имя
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                    <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
                 </div>
                 <div>
                     Отчество
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                    <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
                 </div>
                 <div>
                     Пол
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                    <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
                 </div>
                 <div>
                     Дата рождения
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                    <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
                 </div>
                 <div>
                     Активность
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                    <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
                 </div>
                 <div>
                     Действия
                 </div>
             </div>
             {filteredDrivers.map((driver, index) => <DriversRow key={index} driver={driver} />)}
+            </div>
 
             <div className="drivers_pagination">
                 <div onClick={() => paginationHandler('decrement')}><ArrowBackIcon /></div>

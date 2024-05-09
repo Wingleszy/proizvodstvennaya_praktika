@@ -142,6 +142,20 @@ body {
   align-self: center;
 }
 
+@media (max-width: 600px) {
+  .header_link {
+    font-size: 20px;
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header_link {
+    font-size: 18px;
+    padding: 0 5px;
+  }
+}
+
 /* /HEADER */
 
 /* HOME */
@@ -477,4 +491,62 @@ body {
       text-align: center;
       width: 15%;
     }
+
+    
+    @media (max-width: 1100px) {
+      .drivers_row div {
+        padding: 0px;
+        font-size: 15px;
+        align-items: center;
+        justify-content: center;
+        min-width: 150px;
+        overflow-x: hidden;
+      }
+
+      .drivers_row {
+        padding: 5px;
+        overflow: visible;
+        width: 100%;
+        border: none;
+      }
+
+      .drivers_table_container {
+        overflow-x: scroll;
+      }
+
+      .drivers_row .table_icon, .directions_row .table_icon {
+        display: none;
+      }
+
+      .directions_row {
+        border: none;
+      }
+
+      .directions_row div {
+        min-width: 150px;
+      }
+      
+      .card {
+        width: 100%;
+        align-self: center;
+        justify-self: center;
+      }
+    }
   /* /DRIVERSLIST && DIRECTIONSLIST*/
+
+  @media (max-width: 500px) {
+    .expanded {
+      width: 150px;
+    }
+    .logo__name {
+      font-size: 20px;
+    }
+
+    .sidebar_link {
+      font-size: 12px;
+    }
+
+    .link_item {
+      font-size: 16px;
+    }
+  }

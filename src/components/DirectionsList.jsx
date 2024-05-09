@@ -60,21 +60,24 @@ export const DirectionsList = (props) => {
                 <button className='search_reset' onClick={resetSearchHandler}>Сбросить</button>
                 <button className='search_find' onClick={searchHandler}>Поиск</button>
             </div>
-            <div className='directions_row drivers_header'>
-                <div>
-                    Наименование
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
-                </div>
+            <div className="drivers_table_container">
 
-                <div>
-                    Сокращение
-                    <SwitchLeftIcon sx={{ rotate: '90deg' }} />
+                <div className='directions_row drivers_header'>
+                    <div>
+                        Наименование
+                        <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
+                    </div>
+
+                    <div>
+                        Сокращение
+                        <SwitchLeftIcon sx={{ rotate: '90deg' }} className='table_icon'/>
+                    </div>
+                    <div>
+                        Действия
+                    </div>
                 </div>
-                <div>
-                    Действия
-                </div>
+                {filteredDirections.map((direction, index) => <DirectionRow key={index} direction={direction} />)}
             </div>
-            {filteredDirections.map((direction, index) => <DirectionRow key={index} direction={direction} />)}
 
             <div className="drivers_pagination">
                 <div onClick={() => paginationHandler('decrement')}><ArrowBackIcon /></div>
