@@ -8,6 +8,9 @@ export const Login = (props) => {
 
   const openModal = (link) => {
     let newWindow = window.open(link, '_blank', 'width=600,height=400,left=100,top=100')
+    let queryParams = new URLSearchParams(newWindow.location.search);
+    let token = queryParams.get('token'); 
+    console.log(token);
     if (newWindow) {
       newWindow.addEventListener('load', function() {
         let queryParams = new URLSearchParams(newWindow.location.search);
