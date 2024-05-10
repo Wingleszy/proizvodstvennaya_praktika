@@ -19,7 +19,7 @@ export const Cities = () => {
 
 
     useEffect(() => {
-        fetch(process.env.REACT_APP_CITIES_LINK + "cities?page=" + currentPage, {
+        fetch(process.env.REACT_APP_CITIES_LINK + "cities?page=" + 1, {
             headers: new Headers({
                 'Authorization': "Bearer " + localStorage.getItem("token"),
                 'Content-Type': 'application/json; charset=utf-8',
@@ -28,9 +28,10 @@ export const Cities = () => {
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            setPassengers(data)
+            setPagesCount(Math.ceil(data.length/30))
         });
-    }, [currentPage]);
+    }, []);
 
 
     return (

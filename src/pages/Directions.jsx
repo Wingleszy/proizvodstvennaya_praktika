@@ -38,7 +38,7 @@ export const Directions = () => {
         <main className="main">
             <Header setExpanded={setExpanded} />
             <Label label={"Список направлений"} />
-            <DirectionsList directions={directions} pagesCount={pagesCount} currentPage={currentPage} setCurrentPage={setCurrentPage} setSearchParams={setSearchParams}/>
+            <DirectionsList searchParams={searchParams} directions={directions} pagesCount={pagesCount} currentPage={currentPage} setCurrentPage={setCurrentPage} setSearchParams={setSearchParams}/>
             <Footer />
         </main>
         </div>

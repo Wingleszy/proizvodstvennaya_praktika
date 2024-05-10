@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SwitchLeftIcon from '@mui/icons-material/SwitchLeft';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { DirectionRow } from './DirectionRow';
 
 export const DirectionsList = (props) => {
-    const { directions = [], pagesCount, currentPage, setCurrentPage, setSearchParams } = props;
-    const [name, setName] = useState('');
-    const [abbreviation, setAbbreviation] = useState('');
-    const [searchTerm, setSearchTerm] = useState('');
-    const [searchTermAbbreviation, setSearchTermAbbreviation] = useState('');
+    const { directions = [], pagesCount, currentPage, setCurrentPage, setSearchParams, searchParams } = props;
+    const [name, setName] = useState(searchParams.get('name') || '');
+    const [abbreviation, setAbbreviation] = useState(searchParams.get('abbreviation') || '');
+    const [searchTerm, setSearchTerm] = useState(searchParams.get('name') || '');
+    const [searchTermAbbreviation, setSearchTermAbbreviation] = useState(searchParams.get('abbreviation') || '');
 
     const paginationHandler = (type) => {
         if (type === 'increment' && currentPage < pagesCount) {
@@ -26,9 +26,13 @@ export const DirectionsList = (props) => {
         setSearchParams({ 'page': value, 'name': name, 'abbreviation': abbreviation });
     };
 
+    useEffect(() => {
+        searchHandler()
+    }, [])
+
     const searchHandler = () => {
         setSearchTerm(name.toLowerCase());
-        setSearchTerm(abbreviation.toLowerCase());
+        setSearchTermAbbreviation(abbreviation.toLowerCase());
         setSearchParams({ 'page': currentPage, 'name': name, 'abbreviation': abbreviation });
     };
 
@@ -53,7 +57,9 @@ export const DirectionsList = (props) => {
     return (
         <div className='drivers_table home_content'>
             <div className="drivers_filter directions_filter">
-                <input type="text" placeholder='Поиск по наименованию' onChange={(e) => setName(e.target.value)} value={name} />
+                <input type="text" placeholder='Поиск по наименованию' onChange={(e) => {
+                    setName(e.target.value)
+                    }} value={name} />
                 <input type="text" placeholder='Поиск по сокращению' onChange={(e) => setAbbreviation(e.target.value)} value={abbreviation} />
             </div>
             <div className="drivers_search">

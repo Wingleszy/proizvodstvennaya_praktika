@@ -56,6 +56,7 @@ export const PassengersList = (props) => {
     };
 
     useEffect(() => {
+        smartSearch()
         setFilteredPassengers(passengers)
     }, [passengers])
 
@@ -125,7 +126,6 @@ export const PassengersList = (props) => {
         });
 
         setFilteredPassengers(filteredData); 
-        console.log(filteredPassengers);
     };
 
     return (

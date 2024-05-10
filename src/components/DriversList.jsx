@@ -65,6 +65,7 @@ export const DriversList = (props) => {
 
     useEffect(() => {
         setFilteredDrivers(drivers)
+        searchHandler()
     }, [drivers])
 
     const searchHandler = () => {

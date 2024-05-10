@@ -6,14 +6,13 @@ export const CitiesRow = (props) => {
   return (
     <div className='drivers_row_container'>
       <div className='drivers_row'>
-          <div>{passenger.lastname}</div>
-          <div>{passenger.firstname}</div>
-          <div>{passenger.patronymic}</div>
-          <div>{passenger.phone}</div>
-          <div>{passenger.email}</div>
-          <div>{passenger.sex === 1 ? 'муж' : 'жен'}</div>
-          <div>{passenger?.documents[0]?.serial && passenger?.documents[0]?.serial ? passenger?.documents[0]?.serial + ' ' + passenger?.documents[0]?.number : ""}</div>
-          <div>{passenger.birthdate.slice(0, 10).replaceAll('-', '.')}</div>
+          <div>{passenger.shortName}</div>
+          <div>{passenger.name}</div>
+          <div>{passenger.officialName}</div>
+          <div>{passenger.okato}</div>
+          <div>{passenger.oktmo}</div>
+          <div>{passenger.longtitude}</div>
+          <div>{passenger.latitude}</div>
       </div>
     </div>
   )
