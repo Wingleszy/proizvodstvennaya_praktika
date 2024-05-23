@@ -1,4 +1,4 @@
 # React Shop Portfolio Project
 
-[Demo](https://wingleszy.github.io/proizvodstvennaya_praktika/)
+[Demo]([https://proizvodstvennaya-praktika.netlify.app/drivers?page=1&firstname=&lastname=&patronymic=])
 
